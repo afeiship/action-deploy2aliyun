@@ -44,5 +44,12 @@
   },
   "dependencies": {
     "@jswork/next-to-action": "^1.0.0"
-  }
+  },
+  "keywords": [
+    "next",
+    "fetch",
+    "request",
+    "middleware",
+    "response-type"
+  ]
 }
