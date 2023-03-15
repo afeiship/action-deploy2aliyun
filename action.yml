@@ -30,10 +30,12 @@ runs:
     # step4: Install dependencies
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
       run: yarn
 
     # step5: Build Project
     - name: Build Project
+      shell: bash
       run: yarn build
 
     # step6: Config AliyunCli
@@ -42,5 +44,6 @@ runs:
 
     # step7: Deploy by aliyun-cli
     - name: Deploy by aliyun-cli
+      shell: bash
       run: |
         aliyun oss sync build oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/ --force --delete
