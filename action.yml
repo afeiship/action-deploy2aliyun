@@ -53,7 +53,7 @@ runs:
       uses: afeiship/action-aliyun-cli@1.0.1
 
     # step7: Deploy by aliyun-cli
-    - name: Deploy by aliyun-cli
-      shell: bash
-      run: |
-        aliyun oss sync ${{ inputs.build_dist }} ${{ inputs.oss_bucket }} --force --delete
+    # - name: Deploy by aliyun-cli
+    #   shell: bash
+    #   run: |
+    #     aliyun oss sync ${{ inputs.build_dist }} ${{ inputs.oss_bucket }} --force --delete
