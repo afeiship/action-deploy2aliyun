@@ -1,0 +1,16 @@
+name: action-deploy2aliyun
+description: A composite steps for deploy frontend files to aliyun oss.
+inputs:
+  my-input:
+    description: "My input description"
+    required: true
+outputs:
+  my-output:
+    description: "My output description"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Step 2
+      run: echo "Step 2"
