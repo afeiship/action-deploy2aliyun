@@ -1,8 +1,4 @@
 name: deploy2aliyun workflow
-on:
-  push:
-    branches:
-      - master
 jobs:
   Release:
     name: Release
