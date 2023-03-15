@@ -1,16 +1,46 @@
 name: action-deploy2aliyun
 description: A composite steps for deploy frontend files to aliyun oss.
-inputs:
-  my-input:
-    description: "My input description"
-    required: true
-outputs:
-  my-output:
-    description: "My output description"
+inputs: {}
+outputs: {}
 runs:
   using: "composite"
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Step 2
-      run: echo "Step 2"
+    # step1: Checkout the repository
+    - uses: actions/checkout@v3
+
+    # step2: Setup Node.js
+    - name: Use Node.js 16.18.0
+      uses: actions/setup-node@v3
+      with:
+        node-version: "16.18.0"
+        # cache: 'yarn'
+
+    # step3: Cache node_modules
+    - name: Cache node_modules
+      uses: actions/cache@v3
+      with:
+        path: |
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+          ${{ runner.os }}-
+
+    # step4: Install dependencies
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn
+
+    # step5: Build Project
+    - name: Build Project
+      run: yarn build
+
+    # step6: Config AliyunCli
+    - name: Use aliyun-cli
+      uses: afeiship/action-aliyun-cli@1.0.1
+
+    # step7: Deploy by aliyun-cli
+    - name: Deploy by aliyun-cli
+      run: |
+        aliyun oss sync build oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/ --force --delete
