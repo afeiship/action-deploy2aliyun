@@ -1,7 +1,17 @@
 name: action-deploy2aliyun
 description: A composite steps for deploy frontend files to aliyun oss.
-inputs: {}
+inputs:
+  build_dist:
+    description: "The build dist folder."
+    required: true
+    default: "build"
+  oss_bucket:
+    description: "The oss bucket name."
+    required: true
+    default: "oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/"
+
 outputs: {}
+
 runs:
   using: "composite"
   steps:
@@ -46,4 +56,4 @@ runs:
     - name: Deploy by aliyun-cli
       shell: bash
       run: |
-        aliyun oss sync build oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/ --force --delete
+        aliyun oss sync ${{ inputs.build_dist }} ${{ inputs.oss_bucket }} --force --delete
