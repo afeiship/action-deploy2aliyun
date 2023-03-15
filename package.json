@@ -11,5 +11,8 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "mkdir build && cp app/index.html build/index.html"
+  },
+  "dependencies": {
+    "@jswork/next": "^1.1.5"
   }
 }
