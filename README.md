@@ -26,8 +26,4 @@ jobs:
         with:
           build_dist: "build"
           oss_bucket: "oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/"
-
-      - name: Debug
-        run: |
-          printenv
 ```
