@@ -11,4 +11,4 @@ jobs:
     # if: contains(github.event.head_commit.message, '__@production__')
     steps:
       - name: All in one
-        uses: afeiship/action-deploy2aliyun@main
+        uses: afeiship/action-deploy2aliyun@master
