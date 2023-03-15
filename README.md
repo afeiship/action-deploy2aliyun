@@ -1,7 +1,7 @@
 # action-deploy2aliyun
 > A composite steps for deploy frontend files to aliyun oss.
 
-## usgae
+## usage
 1. set secret `gh secret set -f ~/.aliyun/.env.kubebio`
 2. use below workflow
 ```yml
