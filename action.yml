@@ -1,9 +1,13 @@
 name: action-deploy2aliyun
 description: A composite steps for deploy frontend files to aliyun oss.
 inputs:
+  node_version:
+    description: "The node version."
+    required: false
+    default: "16.18.0"
   build_dist:
-    description: "The build dist folder."
-    required: true
+    description: "The build dist folder, default is build."
+    required: false
     default: "build"
   oss_bucket:
     description: "The oss bucket name."
@@ -19,10 +23,10 @@ runs:
     - uses: actions/checkout@v3
 
     # step2: Setup Node.js
-    - name: Use Node.js 16.18.0
+    - name: Use Node.js ${{ inputs.node_version }}
       uses: actions/setup-node@v3
       with:
-        node-version: "16.18.0"
+        node-version: ${{ inputs.node_version }}
         # cache: 'yarn'
 
     # step3: Cache node_modules
@@ -53,7 +57,7 @@ runs:
       uses: afeiship/action-aliyun-cli@1.0.1
 
     # step7: Deploy by aliyun-cli
-    # - name: Deploy by aliyun-cli
-    #   shell: bash
-    #   run: |
-    #     aliyun oss sync ${{ inputs.build_dist }} ${{ inputs.oss_bucket }} --force --delete
+    - name: Deploy by aliyun-cli
+      shell: bash
+      run: |
+        aliyun oss sync ${{ inputs.build_dist }} ${{ inputs.oss_bucket }} --force --delete
