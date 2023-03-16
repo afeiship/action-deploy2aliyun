@@ -25,5 +25,5 @@ jobs:
         uses: afeiship/action-deploy2aliyun@master
         with:
           build_dist: "build"
-          oss_bucket: "oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/"
+          oss_bucket: "oss://you-bucket/sub-path/assets/test-app-deploy2aliyun/"
 ```

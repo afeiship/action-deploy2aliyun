@@ -12,7 +12,7 @@ inputs:
   oss_bucket:
     description: "The oss bucket name."
     required: true
-    default: "oss://kubebio-com-web/kubebio.com/assets/test-app-deploy2aliyun/"
+    default: "oss://you-bucket/sub-path/assets/test-app-deploy2aliyun/"
 
 outputs: {}
 
