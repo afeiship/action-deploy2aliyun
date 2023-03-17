@@ -1,6 +1,6 @@
 {
   "name": "action-deploy2aliyun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A composite steps for deploy frontend files to aliyun oss.",
   "homepage": "https://js.work",
   "author": {
