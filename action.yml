@@ -54,7 +54,7 @@ runs:
 
     # step6: Config AliyunCli
     - name: Use aliyun-cli
-      uses: afeiship/action-aliyun-cli@1.0.1
+      uses: afeiship/action-aliyun-cli@1.0.2
 
     # step7: Deploy by aliyun-cli
     - name: Deploy by aliyun-cli
