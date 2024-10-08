@@ -9,6 +9,10 @@ inputs:
     description: "The build dist folder, default is build."
     required: false
     default: "build"
+  build_mode:
+    description: "The build mode, default is empty string."
+    required: false
+    default: ""
   oss_bucket:
     description: "The oss bucket name."
     required: true
@@ -50,7 +54,12 @@ runs:
     # step5: Build Project
     - name: Build Project
       shell: bash
-      run: yarn build
+      run:
+        if [ -n "${{ inputs.build_mode }}" ]; then
+          yarn build:${{ inputs.build_mode }}
+        else
+          yarn build
+        fi
 
     # step6: Config AliyunCli
     - name: Use aliyun-cli
