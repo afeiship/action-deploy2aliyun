@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@jswork/next@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.npmmirror.com/@jswork/next/-/next-1.1.5.tgz#390692e4642624410a8ade9dea00e1f8a495fffa"
-  integrity sha512-V9yOPsHhQN3bkBzlmH76YULklHYX+GftAQPGEJc0T9Gmqgt9BLCSJbCHq5PhbE6XEbUQ3b+PT8qUMA5dGjbJ4w==
+"@jswork/next@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.npmjs.org/@jswork/next/-/next-1.2.6.tgz#25ceb2c3b768e67713232685278d06e3b48c2c15"
+  integrity sha512-P3StLoQC5Zwkt+BYmJHov58RJwyz20+gzvdyuCMBLkGXdRU4OwTj5dFcgaWuNA0jzSc5hlyctoXR6/WX0J8r+Q==

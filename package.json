@@ -14,7 +14,7 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@jswork/next": "^1.1.5"
+    "@jswork/next": "^1.2.6"
   },
   "gtc": "发布到 production 环境 __@production__ at 2023-03-15 10:04:30"
 }
