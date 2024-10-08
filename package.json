@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf build",
-    "build": "mkdir build && cp app/index.html build/index.html",
+    "build:beta": "mkdir build && cp app/index.html build/index.html",
     "release": "release-it"
   },
   "dependencies": {

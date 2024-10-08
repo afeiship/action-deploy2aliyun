@@ -54,7 +54,7 @@ runs:
     # step5: Build Project
     - name: Build Project
       shell: bash
-      run:
+      run: |
         if [ -n "${{ inputs.build_mode }}" ]; then
           yarn build:${{ inputs.build_mode }}
         else

@@ -18,6 +18,7 @@ jobs:
         uses: afeiship/action-deploy2aliyun@master
         with:
           build_dist: "build"
+          build_mode: 'beta'
           oss_bucket: "oss://you-bucket/sub-path/assets/test-app-deploy2aliyun/"
 
       - name: Debug
